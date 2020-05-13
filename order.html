@@ -175,7 +175,7 @@ Calendar.setup({
 </li>
 <li class="buttons">
 <input type="hidden" name="form_1"/>
-<input id="submit" class="button_text" type="submit" name="submit" value="submit"/>
+<input id="submit" class="button_text" type="submit" name="submit" value="submit" onclick="validationcheck()"/>
 Click Save button to save as formdata.txt in download directory and then email it as attachment OR
 </li>
 </ul>
@@ -343,6 +343,13 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+};
+function validitycheck() {
+        if (document.getElementById('form_1').checkValidity()) {
+	alert ("Ready to submit...");
+	} else {
+	alert ("Ensure data validity and data entry in fields which are required...");
+	};
 };
 </script>
 </html>
