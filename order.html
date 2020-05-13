@@ -5,57 +5,52 @@
 
 <title>Order Entry</title>
 
-<link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="view.js"></script>
-<script type="text/javascript" src="calendar.js"></script>
-
+<link rel="stylesheet" type="text/css" href="./view.css" media="all">
+<script type="text/javascript" src="./view.js"></script>
+<script type="text/javascript" src="./calendar.js"></script>
 </head>
-
+<p></p>
+<p></p>
 <body id="main_body" >
 	
-<img id="top" src="top.png" alt="">
-
 <div id="form_container">
 <h1><a>Order Entry</a></h1>
 		
-<form id="form_108928" method="post" action="order.php"> <div class="form_description" data-email="arvindsane60@gmail.com">
-<h2>Order Entry</h2>
+<form id="form_1" method="post" action="http://futureexplorers.epizy.com/order.php"> <div class="form_description" />
 
 <p></p>
 		
 </div>		
 
 <li id="li_1" >	<label class="description" for="element_1">Your Name </label>
-<input id="element_1" name="element_1" class="element text large" type="text" 
-maxlength="255" value=""/> 
+<input id="element_1" name="element_1" class="element text large" type="text" maxlength="255" value="" onclick="PopulateDropDownList()" required/> 
 <li id="li_1A" >	<label class="description" for="element_1">Your Address</label>
 <input id="element_1A" name="element_1A" class="element text large" type="text" 
-maxlength="255" value=""/> 
+maxlength="255" value="" required/> 
 <li id="li_1B" >	<label class="description" for="element_1">Your city, state</label> 
 <input id="element_1B" name="element_1B" class="element text large" type="text" 
-maxlength="255" value=""/> 
+maxlength="255" value="" required/> 
 </li><br>
 <li id="li_1B" >
-<label class="description" for="element_2">Your Email&nbsp;&nbsp;<input id="element_2" name="element_2" class="element text small" type="text" maxlength="255" value="" /> 
-<label  for="element_2">Your Phone/Whatsapp<input id="element_2A" name="element_2A" class="element text small" type="text" maxlength="255" value="" /> </label></label>
+<label class="description" for="element_2">Your Email&nbsp;&nbsp;<input id="element_2" name="element_2" class="element text small" type="text" maxlength="255" value="" required/> 
+<label  for="element_2A">Your Phone/Whatsapp<input id="element_2A" name="element_2A" class="element text small" type="text" maxlength="255" value="" required/> </label></label>
 <li id="li_3" >
 <label class="description" for="element_3">Order Date </label>
 <span> 
-<input id="element_3_1" name="element_3_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+<input id="element_3_1" name="element_3_1" class="element text" size="2" maxlength="2" value="" type="text"  readonly>/
 <label for="element_3_1">MM</label>
 </span>
 <span>
-<input id="element_3_2" name="element_3_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+<input id="element_3_2" name="element_3_2" class="element text" size="2" maxlength="2" value="" type="text"  readonly>/
 <label for="element_3_2">DD</label>
 </span>
 <span>
-<input id="element_3_3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text">
+<input id="element_3_3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text"  readonly required>
 <label for="element_3_3">YYYY</label>
 </span>
-	
+
 <span id="calendar_3">
-<img 
-id="cal_img_3" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+<img id="cal_img_3" class="datepicker" src="calendar.gif" alt="Pick a date.">	
 </span>
 <script type="text/javascript">
 
@@ -74,7 +69,7 @@ Calendar.setup({
 </script>
 		 
 </li>
-<table border="1" style="border-collapse: collapse; width: 100%;">
+<table border="1" style="border-collapse: collapse; width:60%; float:left">
 <tbody>
 <tr>
 <td style="width: 82.5372%;"><strong>Product</strong></td>
@@ -84,106 +79,143 @@ Calendar.setup({
 </tr>
 <tr>
 <td style="width: 82.5372%;">
-<select class="element select large" id="element_5" name="element_5"> 
+<select class="element select large" id="element_5" name="element_5"  onchange="GetPriceImage(this,'element_5')">
 <option value="" selected="selected"></option>
-<option 
-value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
 </select>
 </td>
 <td style="width: 5.78554%;">
-<input id="element_5A" name="element_5A" class="element text large" type="text" maxlength="255" value=""/>
+<input id="element_5A" name="element_5A" class="element text large" type="text" maxlength="255" value="" required/>
 </td>
 <td style="width: 11.6772%;">
-<input id="element_5B" name="element_5B" class="element text large" type="text" maxlength="255" value=""/>
+<input id="element_5B" name="element_5B" class="element text large" type="text" maxlength="255" value="" readonly/>
 </td>
 </tr>
 <tr>
 <td style="width: 82.5372%;">
-<select class="element select large" id="element_6" name="element_6"> 
+<select class="element select large" id="element_6" name="element_6" onchange="GetPriceImage(this,'element_6')">
 <option value="" selected="selected"></option>
-<option 
-value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
 </select>
 </td>
 <td style="width: 5.78554%;">
 <input id="element_6A" name="element_6A" class="element text large" type="text" maxlength="255" value=""/> 
 </td>
 <td style="width: 11.6772%;">
-<input id="element_6B" name="element_6B" class="element text large" type="text" maxlength="255" value=""/>
+<input id="element_6B" name="element_6B" class="element text large" type="text" maxlength="255" value="" readonly/>
 </td>
 </tr>
 <tr>
 <td style="width: 82.5372%;">
-<select class="element select large" id="element_7" name="element_7"> 
+<select class="element select large" id="element_7" name="element_7" onchange="GetPriceImage(this,'element_7')"> 
 <option value="" selected="selected"></option>
-<option 
-value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
 </select>
 </td>
 <td style="width: 5.78554%;">
 <input id="element_7A" name="element_7A" class="element text large" type="text" maxlength="255" value=""/> 
 </td>
 <td style="width: 11.6772%;">
-<input id="element_7B" name="element_7B" class="element text large" type="text" maxlength="255" value=""/> 
+<input id="element_7B" name="element_7B" class="element text large" type="text" maxlength="255" value="" readonly/> 
 </td>
 </tr>
 <tr>
 <td style="width: 82.5372%;">
-<select class="element select large" id="element_8" name="element_8"> 
+<select class="element select large" id="element_8" name="element_8" onchange="GetPriceImage(this,'element_8')"> 
 <option value="" selected="selected"></option>
-<option 
-value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
 </select>
 </td>
 <td style="width: 5.78554%;">
 <input id="element_8A" name="element_8A" class="element text large" type="text" maxlength="255" value=""/> 
 </td>
 <td style="width: 11.6772%;">
-<input id="element_8B" name="element_8B" class="element text large" type="text" maxlength="255" value=""/> 
+<input id="element_8B" name="element_8B" class="element text large" type="text" maxlength="255" value="" readonly/> 
 </td>
 </tr>
 <tr>
 <td style="width: 82.5372%;">
-<select class="element select large" id="element_9" name="element_9"> 
+<select class="element select large" id="element_9" name="element_9" onchange="GetPriceImage(this,'element_9')"> 
 <option value="" selected="selected"></option>
-<option 
-value="1" >First option</option>
-<option value="2" >Second option</option>
-<option value="3" >Third option</option>
 </select>
 </td>
 <td style="width: 5.78554%;">
 <input id="element_9A" name="element_9A" class="element text large" type="text" maxlength="255" value=""/> 
 </td>
 <td style="width: 11.6772%;">
-<input id="element_9B" name="element_9B" class="element text large" type="text" maxlength="255" value=""/> 
+<input id="element_9B" name="element_9B" class="element text large" type="text" maxlength="255" value="" readonly/> 
+</td>
+</tr>
+<tr>
+<td>
+<label class="description" for="element_11">Total Rs.(Click to get Totals): </>
+</td>
+<td>
+</td>
+<td>
+<input id="element_11" name="element_11" class="element text large" type="text" maxlength="255" value="0" onclick="CalcTot()" readonly/>
 </td>
 </tr>
 </tbody>
 </table>
+<table border="1" style="border-collapse: collapse; width:40%; float:left;height:200px">
+<tr>
+<td>
+<img id="prodimg" style="float: left; " src="https://" alt="Product photo" height="180" /
+</td>
+</tr>
+<tr>
+<td>
+<input id="imgname" name="imgname" class="element text large" type="text" maxlength="255" value="" readonly/>
+</td>
+</tr>
+</table>
 <li id="li_11" >
-<label class="description" for="element_11">Total Rs.(Click to get Totals): </>
-<input id="element_11" name="element_11" class="element text small" type="text" maxlength="255" value="0" onclick="CalcTot()"/> 
+ 
 </li>
 <li id="li_11" >
 <label class="description" for="element_12">Comments, if any </>
 <input id="element_12" name="element_12" class="element text large" type="text" maxlength="255" value=""/> 
 </li>
 <li class="buttons">
-<input type="hidden" name="form_id" value="108928" />
-<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+<input type="hidden" name="form_1"/>
+<input id="submit" class="button_text" type="submit" name="submit" value="submit"/>
+Click Save button to save as formdata.txt in download directory and then email it as attachment OR
 </li>
 </ul>
 </form>	
 </body>
+<script>
+var prod = [["bag1",125],["bag2",345],["bag3",800],["bag4",925],["bag5",1025],["bag6",625],["bag7",845],["bag8",1100],["bag9",789],["bag10",2025]];
+function PopulateDropDownList() {
+var x = document.getElementById("element_5").length;
+if (x==1) {
+var products = document.getElementById("element_5");
+AddOptions(document.getElementById("element_5"));
+AddOptions(document.getElementById("element_6"));
+AddOptions(document.getElementById("element_7"));
+AddOptions(document.getElementById("element_8"));
+AddOptions(document.getElementById("element_9"));
+};
+};
+function AddOptions(products1){
+//Add the Options to the DropDownList.
+	for (var i = 0; i < prod.length; i++) {
+                var option = document.createElement("OPTION");
+ 
+                //Set Prod Name in Text part.
+                option.innerHTML = prod[i][0];
+ 
+                //Add the Option element to DropDownList.
+                products1.options.add(option);
+            };
+};
+function GetPriceImage(el,selectID){
+	for (var i = 0; i < prod.length; i++) {
+	if (prod[i][0] == el.value){
+	document.getElementById(selectID+"B").value = prod[i][1];
+	prodimg.src="./"+(el.value).substr(0,8).trim()+".jpg";	
+	document.getElementById("imgname").value ="./"+(el.value).substr(0,8).trim()+".jpg";
+	};
+	};
+};
+</script>
 <script>
     let saveFile = () => {
     	
@@ -193,8 +225,8 @@ value="1" >First option</option>
         //const email = document.getElementById('txtEmail');
         //const country = document.getElementById('selCountry');
         //const msg = document.getElementById('msg');
-        
         // This variable stores all the data.
+        if (document.getElementById('form_1').checkValidity()) {
         let data = 
             '\r Name: ' + document.getElementById('element_1').value + ' \r\n ' + 
             'Address: ' +document.getElementById('element_1A').value + ' \r\n ' + 
@@ -203,19 +235,19 @@ value="1" >First option</option>
             'Phone: ' + document.getElementById('element_2A').value + ' \r\n ' + 
             'Date: ' +document.getElementById('element_3_1').value + '/' + document.getElementById('element_3_2').value + '/' + document.getElementById('element_3_3').value + ' \r\n ' + 
             'Prod1: ' + document.getElementById('element_5').value + ' \r\n ' + 
-            'Prod2: ' +document.getElementById('element_6').value + ' \r\n ' + 
-            'Prod3: ' + document.getElementById('element_7').value + ' \r\n ' + 
-            'Prod4: ' + document.getElementById('element_8').value + ' \r\n ' + 
-            'Prod5: ' + document.getElementById('element_9').value + ' \r\n ' + 
             'Qty1: ' + document.getElementById('element_5A').value + ' \r\n ' + 
-            'Qty2: ' +document.getElementById('element_6A').value + ' \r\n ' + 
-            'Qty3: ' + document.getElementById('element_7A').value + ' \r\n ' + 
-            'Qty4: ' + document.getElementById('element_8A').value + ' \r\n ' + 
-            'Qty5: ' + document.getElementById('element_9A').value + ' \r\n ' + 
             'Price1: ' + document.getElementById('element_5B').value + ' \r\n ' + 
+            'Prod2: ' +document.getElementById('element_6').value + ' \r\n ' + 
+            'Qty2: ' +document.getElementById('element_6A').value + ' \r\n ' + 
             'Price2: ' +document.getElementById('element_6B').value + ' \r\n ' + 
+            'Prod3: ' + document.getElementById('element_7').value + ' \r\n ' + 
+            'Qty3: ' + document.getElementById('element_7A').value + ' \r\n ' + 
             'Price3: ' + document.getElementById('element_7B').value + ' \r\n ' + 
+            'Prod4: ' + document.getElementById('element_8').value + ' \r\n ' + 
+            'Qty4: ' + document.getElementById('element_8A').value + ' \r\n ' + 
             'Price4: ' + document.getElementById('element_8B').value + ' \r\n ' + 
+            'Prod5: ' + document.getElementById('element_9').value + ' \r\n ' + 
+            'Qty5: ' + document.getElementById('element_9A').value + ' \r\n ' + 
             'Price5: ' + document.getElementById('element_9B').value + ' \r\n ' + 
             'Comments: ' + document.getElementById('element_12').value;
         
@@ -233,9 +265,12 @@ value="1" >First option</option>
             newLink.href = window.URL.createObjectURL(textToBLOB);
             newLink.style.display = "none";
             document.body.appendChild(newLink);
-        }
+        };
 
-        newLink.click(); 
+        newLink.click();
+	} else {
+	alert ("Ensure data validity and data entry in fields which are required...");
+	};
     };
 function CalcTot(){
 document.getElementById('element_11').value = 
@@ -244,6 +279,70 @@ document.getElementById('element_11').value =
          document.getElementById('element_7A').value * document.getElementById('element_7B').value + 
          document.getElementById('element_8A').value * document.getElementById('element_8B').value + 
          document.getElementById('element_9A').value * document.getElementById('element_9B').value;
+};
+</script>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Message to copy paste in gmail</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <textarea id="ModalMsg" rows="30" cols="128">Message</textarea>
+  </div>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.getElementById('ModalMsg').innerHTML = 
+            '\r Name: ' + document.getElementById('element_1').value + ' \r\n ' + 
+            'Address: ' +document.getElementById('element_1A').value + ' \r\n ' + 
+            'Country: ' + document.getElementById('element_1B').value + ' \r\n ' + 
+            'Email: ' + document.getElementById('element_2').value + ' \r\n ' + 
+            'Phone: ' + document.getElementById('element_2A').value + ' \r\n ' + 
+            'Date: ' +document.getElementById('element_3_1').value + '/' + document.getElementById('element_3_2').value + '/' + document.getElementById('element_3_3').value + ' \r\n ' + 
+            'Prod1: ' + document.getElementById('element_5').value + ' \r\n ' + 
+            'Qty1: ' + document.getElementById('element_5A').value + ' \r\n ' + 
+            'Price1: ' + document.getElementById('element_5B').value + ' \r\n ' + 
+            'Prod2: ' +document.getElementById('element_6').value + ' \r\n ' + 
+            'Qty2: ' +document.getElementById('element_6A').value + ' \r\n ' + 
+            'Price2: ' +document.getElementById('element_6B').value + ' \r\n ' + 
+            'Prod3: ' + document.getElementById('element_7').value + ' \r\n ' + 
+            'Qty3: ' + document.getElementById('element_7A').value + ' \r\n ' + 
+            'Price3: ' + document.getElementById('element_7B').value + ' \r\n ' + 
+            'Prod4: ' + document.getElementById('element_8').value + ' \r\n ' + 
+            'Qty4: ' + document.getElementById('element_8A').value + ' \r\n ' + 
+            'Price4: ' + document.getElementById('element_8B').value + ' \r\n ' + 
+            'Prod5: ' + document.getElementById('element_9').value + ' \r\n ' + 
+            'Qty5: ' + document.getElementById('element_9A').value + ' \r\n ' + 
+            'Price5: ' + document.getElementById('element_9B').value + ' \r\n ' + 
+            'Comments: ' + document.getElementById('element_12').value;
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 };
 </script>
 </html>
